@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
 import { useState } from "react";
+import Map from "./Components/mapaspect";
+import Login from "./Components/login";
 import "./App.css";
 
 function App() {
@@ -19,24 +21,7 @@ function App() {
   //}
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="Enter Location"
-        onChange={(e) => {
-          setAddress(e.target.value);
-        }}
-      />
-      <button type="submit">Submit</button>
-      <hr></hr>
-      <iframe
-        width="500"
-        height="400"
-        // style="border:0"
-        title="mappymap"
-        loading="lazy"
-        // allowfullscreen
-        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCw07qXCsliUlTMzO1DomRnqkNpdbd8mRQ&q=${address}`}
-      ></iframe>
+      <Login />
     </div>
   );
 }
