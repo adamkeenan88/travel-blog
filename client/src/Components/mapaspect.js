@@ -1,11 +1,12 @@
 import { React, useState } from "react";
 function Map() {
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState("Chicago, IL");
 
   return (
     <div>
       <input
         type="text"
+        value={address}
         placeholder="Enter Location"
         onChange={(e) => {
           setAddress(e.target.value);
