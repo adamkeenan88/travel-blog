@@ -1,5 +1,5 @@
 import Map from "./Components/mapaspect";
-import Login from "./Components/login";
+import Login from "./Views/login";
 import "./App.css";
 import { Link } from "@reach/router";
 
@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <Login />
+      <Map />
     </div>
   );
 }
