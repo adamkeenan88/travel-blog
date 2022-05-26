@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const User = require("../model/user.model");
 
-login: async (req, res) => {
+module.exports.login = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
 
   if (user === null) {
@@ -37,7 +37,7 @@ login: async (req, res) => {
     .json({ msg: "success!" });
 };
 
-register: (req, res) => {
+module.exports.register = (req, res) => {
   User.create(req.body)
     .then((user) => {
       const userToken = jwt.sign(
@@ -55,8 +55,12 @@ register: (req, res) => {
     })
     .catch((err) => res.json(err));
 };
-
-logout: (req, res) => {
+module.exports.getAll = (req, res) => {
+  User.find()
+    .then((allUsers) => res.json({ user: allUsers }))
+    .catch((err) => res.json({ message: "Something went wrong", error: err }));
+};
+module.exports.logout = (req, res) => {
   res.clearCookie("usertoken");
   res.sendStatus(200);
 };

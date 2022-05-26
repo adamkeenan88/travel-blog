@@ -1,4 +1,4 @@
-const Users = require("../controllers/user.controller");
+const Users = require("../controller/user.controller");
 const { authenticate } = require("../config/jwt.config");
 
 module.exports = (app) => {
