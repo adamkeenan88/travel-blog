@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 const User = require("../model/user.model");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const { secret } = require("../config/jwt.config");
 
 module.exports.login = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });

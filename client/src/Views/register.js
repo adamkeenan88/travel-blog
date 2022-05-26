@@ -9,6 +9,7 @@ const Register = (props) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState("");
 
@@ -27,10 +28,11 @@ const Register = (props) => {
       .then((newUser) => {
         setFirstName("");
         setLastName("");
+        setUserName("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-        navigate("/users");
+        navigate("/login");
       })
       .catch((err) => {
         console.log("error block", err.response);
@@ -61,6 +63,16 @@ const Register = (props) => {
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+            />
+          </p>
+          <p>
+            <label>Username:</label>
+          </p>
+          <p>
+            <input
+              type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
             />
           </p>
           <p>
@@ -106,8 +118,6 @@ const Register = (props) => {
             <p key={index}>{errors[objKey].message}</p>
           ))
         : null} */}
-
-      <Users />
     </>
   );
 };

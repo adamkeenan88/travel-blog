@@ -8,9 +8,9 @@ import { Router } from "@reach/router";
 function App() {
   return (
     <div className="App">
-      {/* <Login path="/login/> */}
+      <Login path="/login" />
       <Register path="/register" />
-      <User path="/users" />
+      {/* <User path="/users" /> */}
       {/* <Map /> */}
     </div>
   );
