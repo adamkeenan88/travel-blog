@@ -14,7 +14,7 @@ const Register = (props) => {
   const [errors, setErrors] = useState("");
 
   const onSubmitHandler = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     console.log("success");
     const newUserData = {
       firstName,
@@ -32,7 +32,6 @@ const Register = (props) => {
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-        navigate("/login");
       })
       .catch((err) => {
         console.log("error block", err.response);
